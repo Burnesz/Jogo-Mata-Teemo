@@ -6,6 +6,14 @@ body{
     height: 97.8vh;
 }
 
+#body_game_over{
+    background-image: url(imagens/background.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
 .teemo1{
     width: 50px;
     height: 50px;
@@ -29,4 +37,27 @@ body{
 .ladoB{
     transform: scaleX(-1);
 
+}
+
+.painel{
+    background-color: #13211e;
+    position: absolute;
+    left: 0px;
+    width: 300px;
+    padding: 10px;
+    bottom: 0px;
+    border-top: solid 3px #fff;
+    border-color: #7d6100;
+
+}
+
+.temporizador{
+    position: absolute;
+    left: 56px;
+    top: 48px;
+    float: left;
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(165, 12, 12);
+    -webkit-text-stroke: 2px black;
 }

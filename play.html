@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+    </head>
+    <body onresize = "ajustaTamanhoPalcoJogo()">
+        <div class="painel">
+            <div class="temporizador"><span id="temporizador"></span></div>
+            <img id= "painel_img" src="Imagens/vida-3-3.png" width="300px">
+        </div>
+        <script id="script">
+            setInterval(function(){
+                teemoRandom()
+            }, 1000)
+        </script>
+    </body>
+</html>

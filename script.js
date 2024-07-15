@@ -1,5 +1,19 @@
 var altura = 0
 var largura = 0
+var saude = 3
+var tempo = 5
+
+var cronometro = setInterval(function(){
+    if (tempo == 0){
+        window.location.href='game_over.html'
+        localStorage.setItem('resultado', 'victory');
+    }else{
+        tempo--
+        document.getElementById('temporizador').innerHTML = tempo
+    }
+    
+    
+}, 1000)
 
 function ajustaTamanhoPalcoJogo() {
     altura = window.innerHeight;
@@ -10,9 +24,12 @@ function ajustaTamanhoPalcoJogo() {
 ajustaTamanhoPalcoJogo()
 
 function teemoRandom(){
+    
 
     if(document.getElementById('teemo')){
         document.getElementById('teemo').remove()
+    
+        vida(saude)
     }
 
     var posicaoX = (Math.floor(Math.random() * largura) - 90)
@@ -28,6 +45,9 @@ function teemoRandom(){
     teemo.style.top = posicaoY+'px'
     teemo.style.position = 'absolute'
     teemo.id = 'teemo'
+    teemo.onclick = function(){
+        this.remove()
+    }
 
     document.body.appendChild(teemo)
 }
@@ -61,3 +81,25 @@ function teemoLado(){
     }
 }
 
+function vida(){
+    switch(saude){
+        case 3:
+            document.getElementById('painel_img').src="imagens/vida-2-3.png"
+            saude--
+            return
+        
+        case 2:
+            document.getElementById('painel_img').src="imagens/vida-1-3.png"
+            saude--
+            return
+
+        case 1:
+            document.getElementById('painel_img').src="imagens/vida-0-3.png"
+            teemo = document.getElementById('script')
+            teemo.remove()
+            setTimeout(function(){
+                window.location.href='game_over.html'
+            }, 1000)
+            
+    }
+}
