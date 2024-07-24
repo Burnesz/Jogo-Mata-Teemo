@@ -1,7 +1,7 @@
 var altura = 0
 var largura = 0
 var saude = 3
-var tempo = 5
+var tempo = 60
 
 var cronometro = setInterval(function(){
     if (tempo == 0){
@@ -39,7 +39,7 @@ function teemoRandom(){
     posicaoX = posicaoX < 0 ? 0 : posicaoX
     posicaoY = posicaoY < 0 ? 0 : posicaoY
 
-    teemo.src = 'imagens/teemo.png'
+    teemo.src = 'Imagens/teemo.png'
     teemo.className = teemoTamanho() + ' ' + teemoLado()
     teemo.style.left = posicaoX+'px'
     teemo.style.top = posicaoY+'px'
@@ -84,17 +84,17 @@ function teemoLado(){
 function vida(){
     switch(saude){
         case 3:
-            document.getElementById('painel_img').src="imagens/vida-2-3.png"
+            document.getElementById('painel_img').src="Imagens/vida-2-3.png"
             saude--
             return
         
         case 2:
-            document.getElementById('painel_img').src="imagens/vida-1-3.png"
+            document.getElementById('painel_img').src="Imagens/vida-1-3.png"
             saude--
             return
 
         case 1:
-            document.getElementById('painel_img').src="imagens/vida-0-3.png"
+            document.getElementById('painel_img').src="Imagens/vida-0-3.png"
             teemo = document.getElementById('script')
             teemo.remove()
             setTimeout(function(){

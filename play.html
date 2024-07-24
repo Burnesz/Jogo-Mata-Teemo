@@ -2,20 +2,34 @@
 <html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
+        <link rel="icon" href="Imagens/teemo.ico" type="image/x-icon">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title></title>
+        <title>Kill Teemo</title>
         <link rel="stylesheet" href="style.css">
+        <script id="script">
+            document.addEventListener('DOMContentLoaded', function() {
+                function tempo(){
+                    var dificuldade = localStorage.getItem('dificuldade')
+                    if (dificuldade == 'facil'){
+                        return 1500
+                    }else if(dificuldade == 'medio'){
+                        return 1000
+                    }else if (dificuldade == 'dificil'){
+                        return 800
+                    }
+                }
+                setInterval(function(){
+                    teemoRandom()
+                }, tempo())
+            })
+        </script>
         <script src="script.js"></script>
     </head>
     <body onresize = "ajustaTamanhoPalcoJogo()">
         <div class="painel">
             <div class="temporizador"><span id="temporizador"></span></div>
-            <img id= "painel_img" src="Imagens/vida-3-3.png" width="300px">
+                <img id= "painel_img" src="Imagens/vida-3-3.png" width="300px">
+            </div>
         </div>
-        <script id="script">
-            setInterval(function(){
-                teemoRandom()
-            }, 1000)
-        </script>
     </body>
 </html>
